@@ -1,6 +1,6 @@
 import { config } from "@/config";
 import { Button } from "./ui/button";
-import { Rss } from "lucide-react";
+import { Globe, LinkedinIcon, Rss } from "lucide-react";
 import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
 
@@ -12,14 +12,26 @@ export const Footer = () => {
           © {config.organization} {new Date().getFullYear()}
         </div>
         <div className="text-xs text-muted-foreground hidden lg:block">
-          {/* <Link
-            href={`https://wisp.blog/?utm_source=next-js-template&utm_medium=web&utm_campaign=${config.baseUrl}`}
-          >
-            Blog powered by wisp
-          </Link> */}
+          <Link href={`/`}>Blog powered by wisp</Link>
         </div>
         <div className="flex items-center gap-1">
           <ThemeToggle />
+          {/* Portfolio */}
+          <Link href="https://kediayash.in/" target="_blank">
+            <Button variant="ghost" size="icon" aria-label="Portfolio">
+              <Globe className="w-4 h-4" />
+            </Button>
+          </Link>
+
+          {/* LinkedIn */}
+          <Link
+            href="https://www.linkedin.com/in/yash-kedia-dev/"
+            target="_blank"
+          >
+            <Button variant="ghost" size="icon" aria-label="LinkedIn">
+              <LinkedinIcon className="w-4 h-4" />
+            </Button>
+          </Link>
           <Link href="/rss">
             <Button variant="ghost" size="icon" aria-label="RSS feed">
               <Rss className="w-4 h-4" />

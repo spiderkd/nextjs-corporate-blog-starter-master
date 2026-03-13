@@ -15,7 +15,7 @@ export function CommentSection({ slug }: CommentSectionProps) {
     queryFn: () => wisp.getComments({ slug, page: 1, limit: "all" }),
   });
 
-  if (isLoading) {
+  if (isLoading) {npm run
     return <div>Loading...</div>;
   }
 
